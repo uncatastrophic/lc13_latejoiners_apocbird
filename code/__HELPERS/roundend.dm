@@ -207,9 +207,9 @@
 				"Records Officer",
 				"Training Officer",
 				)
-			if(M.assigned_role in valid_roles)
+			if(M.assigned_role in valid_roles && !M.late_joiner) //Survived as an L Corp employee from roundstart
 				player_client.give_award(/datum/award/achievement/lc13/lcorpworld, human_mob)
-			if(istype(human_mob.ego_gift_list["Right Back Slot"], /datum/ego_gifts/twilight))
+			if(istype(human_mob.ego_gift_list["Right Back Slot"], /datum/ego_gifts/twilight)) //Survived a shift with Twilight (Apoc Bird defeated)
 				player_client.give_award(/datum/award/achievement/lc13/twilight, human_mob)
 
 ///Handles random hardcore point rewarding if it applies.
